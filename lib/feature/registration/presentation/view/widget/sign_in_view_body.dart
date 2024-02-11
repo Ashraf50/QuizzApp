@@ -3,6 +3,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
+import 'package:quiz_app/feature/registration/presentation/view/forget_password_view.dart';
 import 'package:quiz_app/feature/registration/presentation/view/sign_up_view.dart';
 import 'package:quiz_app/feature/registration/presentation/view/widget/checked_account_text.dart';
 import 'package:quiz_app/feature/registration/presentation/view/widget/custom_textfield.dart';
@@ -50,7 +51,11 @@ class SignInViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(
+                        () => const ForgetPasswordView(),
+                      );
+                    },
                     child: const Text(
                       textAlign: TextAlign.end,
                       "Forgot Password?",
