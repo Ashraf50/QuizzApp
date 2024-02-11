@@ -36,6 +36,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             emit(RegisterFailure(messageError: 'weak-password'));
           } else if (e.code == 'email-already-in-use') {
             emit(RegisterFailure(messageError: 'email-already-in-use'));
+          } else {
+            emit(RegisterFailure(messageError: e.code));
           }
         } on Exception {
           emit(RegisterFailure(messageError: "something went wrong"));
@@ -53,11 +55,30 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             emit(LoginFailure(message: "user-not-found"));
           } else if (e.code == 'wrong-password') {
             emit(LoginFailure(message: 'wrong-password'));
+          } else {
+            emit(LoginFailure(message: e.code));
           }
         } on Exception {
           emit(LoginFailure(message: "something went wrong"));
         }
-      } else if (event is ResetEvent) {}
+      } else if (event is ResetEvent) {
+        emit(ResetLoading());
+        try {
+          await FirebaseAuth.instance
+              .sendPasswordResetEmail(email: event.email);
+          emit(ResetSuccess());
+        } on FirebaseAuthException catch (e) {
+          if (e.code == 'user-not-found') {
+            emit(ResetFailure(messageError: "user-not-found"));
+          } else if (e.code == 'wrong-password') {
+            emit(ResetFailure(messageError: 'wrong-password'));
+          } else {
+            emit(ResetFailure(messageError: e.code));
+          }
+        } on Exception {
+          emit(ResetFailure(messageError: "something went wrong"));
+        }
+      }
     });
   }
 }
