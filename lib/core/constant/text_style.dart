@@ -20,4 +20,9 @@ class Style {
     fontSize: 14,
     fontFamily: "Poppins",
   );
+  static const textStyle13 = TextStyle(
+    fontSize: 13,
+    fontFamily: "Poppins",
+    color: Color(0xffFF3B30),
+  );
 }

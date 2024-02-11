@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 
 class CustomTextfield extends StatelessWidget {
@@ -7,7 +8,7 @@ class CustomTextfield extends StatelessWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final AutovalidateMode? autovalidateMode;
-  final String Function(String?)? validator;
+  final String? Function(String?)? validator;
   const CustomTextfield({
     super.key,
     required this.hintText,
@@ -30,6 +31,7 @@ class CustomTextfield extends StatelessWidget {
         cursorColor: Colors.black,
         style: Style.textStyle16,
         decoration: InputDecoration(
+          errorStyle: Style.textStyle13,
           hintText: hintText,
           labelStyle: Style.textStyle16,
           enabledBorder: OutlineInputBorder(
@@ -39,6 +41,14 @@ class CustomTextfield extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: const BorderSide(color: Colors.black),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: red),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(color: red),
           ),
           suffixIcon: suffixIcon,
         ),

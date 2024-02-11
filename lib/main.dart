@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:quiz_app/feature/registration/data/auth_bloc/auth_bloc.dart';
 import 'package:quiz_app/feature/welcome/presentation/view/welcome_view.dart';
 
 void main() {
@@ -10,12 +12,19 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xfff5f7fb),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc(),
+        )
+      ],
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xfff5f7fb),
+        ),
+        home: const WelcomeView(),
       ),
-      home: const WelcomeView(),
     );
   }
 }

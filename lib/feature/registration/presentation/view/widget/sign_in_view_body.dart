@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
 import 'package:quiz_app/feature/registration/presentation/view/forget_password_view.dart';
@@ -56,14 +57,14 @@ class SignInViewBody extends StatelessWidget {
                         () => const ForgetPasswordView(),
                       );
                     },
-                    child: const Text(
+                    child: Text(
                       textAlign: TextAlign.end,
                       "Forgot Password?",
                       style: TextStyle(
                         fontSize: 15,
-                        color: Color(0xffFF3B30),
+                        color: red,
                         decoration: TextDecoration.underline,
-                        decorationColor: Color(0xffFF3B30),
+                        decorationColor: red,
                       ),
                     ),
                   ),
