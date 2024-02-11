@@ -5,6 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
+import 'package:quiz_app/core/widget/snack_bar.dart';
 import 'package:quiz_app/feature/registration/data/auth_bloc/auth_bloc.dart';
 import 'package:quiz_app/feature/registration/presentation/view/sign_in_view.dart';
 import 'package:quiz_app/feature/registration/presentation/view/widget/checked_account_text.dart';
@@ -17,6 +18,9 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final phoneController = TextEditingController();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
     final formKey = GlobalKey<FormState>();
     return SafeArea(
       child: Scaffold(
@@ -24,6 +28,15 @@ class SignUpViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 39),
           child: BlocListener<AuthBloc, AuthState>(
             listener: (context, state) {
+              if (state is RegisterLoading) {
+                const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state is RegisterSuccess) {
+                Get.to(() => const SignInView());
+              } else if (state is RegisterFailure) {
+                showSnackBar(context, state.messageError);
+              }
             },
             child: Form(
               key: formKey,
@@ -50,12 +63,12 @@ class SignUpViewBody extends StatelessWidget {
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     hintText: "Enter Your Email",
                     obscureText: false,
-                    controller: TextEditingController(),
+                    controller: emailController,
                   ),
                   CustomTextfield(
                     hintText: "Enter Your Phone Number",
                     obscureText: false,
-                    controller: TextEditingController(),
+                    controller: phoneController,
                   ),
                   CustomTextfield(
                     validator: (value) {
@@ -68,14 +81,24 @@ class SignUpViewBody extends StatelessWidget {
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     hintText: "Enter Your Password",
                     obscureText: true,
-                    controller: TextEditingController(),
+                    controller: passwordController,
                     suffixIcon: const Icon(
                       Icons.visibility,
                       color: Colors.grey,
                     ),
                   ),
                   CustomButton(
-                    onTap: () {},
+                    onTap: () {
+                      if (formKey.currentState!.validate()) {
+                        BlocProvider.of<AuthBloc>(context).add(RegisterEvent(
+                          phoneNumber: phoneController.text,
+                          email: emailController.text,
+                          password: passwordController.text,
+                        ));
+                      } else {
+                        showSnackBar(context, "check the email or password");
+                      }
+                    },
                     title: "Sign Up",
                     width: 405,
                   ),

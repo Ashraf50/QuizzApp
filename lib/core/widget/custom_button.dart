@@ -7,7 +7,9 @@ class CustomButton extends StatelessWidget {
   final Function() onTap;
   const CustomButton({
     super.key,
-    required this.onTap, required this.title, required this.width,
+    required this.onTap,
+    required this.title,
+    required this.width,
   });
 
   @override
@@ -22,7 +24,7 @@ class CustomButton extends StatelessWidget {
           color: purple,
           borderRadius: BorderRadius.circular(12),
         ),
-        child:  Center(
+        child: Center(
           child: Text(
             title,
             style: const TextStyle(
