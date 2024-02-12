@@ -31,4 +31,8 @@ class Style {
     fontFamily: "Poppins",
     color: Color(0xffFF3B30),
   );
+  static const textStyle12 = TextStyle(
+    fontSize: 12,
+    fontFamily: "Poppins",
+  );
 }

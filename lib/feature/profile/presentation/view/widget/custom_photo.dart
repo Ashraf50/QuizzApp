@@ -24,7 +24,7 @@ class CustomPhoto extends StatelessWidget {
                         backgroundColor: Colors.grey[300],
                         maxRadius: 50,
                         backgroundImage: const AssetImage(
-                          "assets/avatar.png",
+                          "assets/img/avatar.png",
                         ),
                       )
                     : Container(
@@ -62,7 +62,7 @@ class CustomPhoto extends StatelessWidget {
                     child: ClipOval(
                       child: Image.file(
                         cubit.imgPath!,
-                        width: 50,
+                        width: 100,
                         fit: BoxFit.cover,
                       ),
                     ),

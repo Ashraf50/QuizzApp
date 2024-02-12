@@ -22,6 +22,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               .doc(user.user!.uid)
               .set(
                 {
+                  'Username': event.username,
                   'phone': event.phoneNumber,
                   'email': event.email,
                   'password': event.password,

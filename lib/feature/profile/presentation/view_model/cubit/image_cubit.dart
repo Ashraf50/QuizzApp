@@ -40,7 +40,7 @@ class ImageCubit extends Cubit<ImageState> {
       String url = await storageRef.getDownloadURL();
       users.doc(userDetails!.uid).update(
         {
-          "imgLink": url,
+          "photoUrl": url,
         },
       );
     }
@@ -54,7 +54,7 @@ class ImageCubit extends Cubit<ImageState> {
       String url = await storageRef.getDownloadURL();
       users.doc(userDetails!.uid).update(
         {
-          "imgLink": url,
+          "photoUrl": url,
         },
       );
     }

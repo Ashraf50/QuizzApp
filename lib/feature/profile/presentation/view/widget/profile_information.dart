@@ -26,7 +26,7 @@ class ProfileInformation extends StatelessWidget {
             ),
             TextWidget(
               title: "Your name",
-              body: data["Username"],
+              body: data["Username"] ?? "NullValue",
             ),
             TextWidget(
               title: "Your email",

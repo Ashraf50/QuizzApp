@@ -21,6 +21,7 @@ class SignUpViewBody extends StatefulWidget {
 }
 
 class _SignUpViewBodyState extends State<SignUpViewBody> {
+  final usernameController = TextEditingController();
   final phoneController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -65,6 +66,11 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                       ),
                       const SizedBox(
                         height: 58,
+                      ),
+                      CustomTextfield(
+                        hintText: "Enter Your Username",
+                        obscureText: false,
+                        controller: usernameController,
                       ),
                       CustomTextfield(
                         validator: (value) {
@@ -122,6 +128,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                           if (formKey.currentState!.validate()) {
                             BlocProvider.of<AuthBloc>(context).add(
                               RegisterEvent(
+                                username: usernameController.text,
                                 phoneNumber: phoneController.text,
                                 email: emailController.text,
                                 password: passwordController.text,
