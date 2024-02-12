@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/widget/custom_icon_button.dart';
+import 'package:quiz_app/feature/splash/presentation/view/widget/custom_icon_button.dart';
 
 class LowerPart extends StatelessWidget {
   final Function() onTap;

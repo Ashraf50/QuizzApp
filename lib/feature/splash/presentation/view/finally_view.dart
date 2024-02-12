@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/feature/registration/presentation/view/sign_up_view.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/widget/custom_app_bar.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/widget/lottie.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/widget/lower_part.dart';
+import 'package:quiz_app/feature/splash/presentation/view/widget/custom_app_bar.dart';
+import 'package:quiz_app/feature/splash/presentation/view/widget/lottie.dart';
+import 'package:quiz_app/feature/splash/presentation/view/widget/lower_part.dart';
 
 class FinallyView extends StatelessWidget {
   const FinallyView({super.key});

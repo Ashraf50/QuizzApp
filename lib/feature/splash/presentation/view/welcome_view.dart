@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/about1_view.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/widget/custom_app_bar.dart';
+import 'package:quiz_app/feature/splash/presentation/view/about1_view.dart';
+import 'package:quiz_app/feature/splash/presentation/view/widget/custom_app_bar.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
-import 'package:quiz_app/feature/welcome/presentation/view/widget/lottie.dart';
+import 'package:quiz_app/feature/splash/presentation/view/widget/lottie.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
