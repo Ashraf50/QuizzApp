@@ -12,6 +12,12 @@ class Style {
     fontWeight: FontWeight.bold,
     color: Color(0xff841FFD),
   );
+  static const textStyle20 = TextStyle(
+    fontSize: 20,
+    fontFamily: "Poppins",
+    fontWeight: FontWeight.bold,
+  
+  );
   static const textStyle16 = TextStyle(
     fontSize: 16,
     fontFamily: "Poppins",

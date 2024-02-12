@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/core/constant/colors.dart';
+import 'package:quiz_app/feature/Wishlist/presentation/view/wishlist_view.dart';
 import 'package:quiz_app/feature/home/presentation/view/home_view.dart';
+import 'package:quiz_app/feature/profile/presentation/view/profile_view.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -21,8 +23,8 @@ class _BottomBarState extends State<BottomBar> {
     const HomeView(),
     const HomeView(),
     const HomeView(),
-    const HomeView(),
-    const HomeView(),
+    const WishlistView(),
+    const ProfileView(),
   ];
   @override
   Widget build(BuildContext context) {

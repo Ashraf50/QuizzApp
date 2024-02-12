@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AuthBloc(),
-        )
+        ),
       ],
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
