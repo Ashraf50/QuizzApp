@@ -162,7 +162,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       const SizedBox(
                         height: 32,
                       ),
-                      GoogleButton(title: "Login with Google", onTap: () {}),
+                      const GoogleButton(),
                       const SizedBox(
                         height: 20,
                       ),

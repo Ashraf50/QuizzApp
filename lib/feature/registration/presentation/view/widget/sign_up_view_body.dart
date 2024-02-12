@@ -142,10 +142,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                       const SizedBox(
                         height: 32,
                       ),
-                      GoogleButton(
-                        title: "Sign up with Google",
-                        onTap: () {},
-                      ),
+                      const GoogleButton(),
                       const SizedBox(
                         height: 20,
                       ),

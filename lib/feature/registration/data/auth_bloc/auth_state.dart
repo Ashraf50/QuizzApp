@@ -36,3 +36,14 @@ class ResetFailure extends AuthState {
     required this.messageError,
   });
 }
+
+class GooglSIgnLoading extends AuthState {}
+
+class GooglSIgnSuccess extends AuthState {}
+
+class GooglSIgnFailure extends AuthState {
+  final String messageError;
+  GooglSIgnFailure({
+    required this.messageError,
+  });
+}

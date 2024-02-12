@@ -28,3 +28,5 @@ class ResetEvent extends AuthEvent {
     required this.email,
   });
 }
+
+class GoogleSignEvent extends AuthEvent {}

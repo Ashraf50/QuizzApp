@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 part 'auth_event.dart';
 part 'auth_state.dart';
 
@@ -77,6 +78,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           }
         } on Exception {
           emit(ResetFailure(messageError: "something went wrong"));
+        }
+      } else if (event is GoogleSignEvent) {
+        emit(GooglSIgnLoading());
+        try {
+          final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+          final GoogleSignInAuthentication? googleAuth =
+              await googleUser?.authentication;
+          final credential = GoogleAuthProvider.credential(
+            accessToken: googleAuth?.accessToken,
+            idToken: googleAuth?.idToken,
+          );
+          final user =
+              await FirebaseAuth.instance.signInWithCredential(credential);
+          CollectionReference users =
+              FirebaseFirestore.instance.collection("Users");
+          users
+              .doc(user.user!.uid)
+              .set(
+                {
+                  'Username': googleUser!.displayName,
+                  'email': googleUser.email,
+                  'photoUrl': googleUser.photoUrl,
+                },
+              )
+              .then(
+                // ignore: avoid_print
+                (value) => print("User Added"),
+              )
+              // ignore: avoid_print
+              .catchError((error) => print("Failed to add user: $error"));
+          emit(GooglSIgnSuccess());
+        } on Exception {
+          emit(GooglSIgnFailure(messageError: "something went wrong"));
         }
       }
     });
