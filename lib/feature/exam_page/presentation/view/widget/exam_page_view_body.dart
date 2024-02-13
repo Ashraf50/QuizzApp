@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/model/category_model.dart';
 import 'package:quiz_app/core/widget/custom_app_bar.dart';
-import 'package:quiz_app/feature/details/presentation/view/widget/details_item.dart';
+import 'package:quiz_app/feature/exam_page/presentation/view/widget/exam_question_list_view.dart';
 
-class DetailsViewBody extends StatelessWidget {
+class ExamPageViewBody extends StatelessWidget {
   final CategoryModel category;
-  const DetailsViewBody({super.key, required this.category});
+  const ExamPageViewBody({
+    super.key,
+    required this.category,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +25,12 @@ class DetailsViewBody extends StatelessWidget {
               ),
               CustomAppBar(
                 title: category.name,
-                style: Style.textStyle26,
+                style: Style.textStyle20,
               ),
               const SizedBox(
                 height: 20,
               ),
-              DetailsItem(
-                category: category,
-              )
+              const ExamQuestionListView(),
             ],
           ),
         ),

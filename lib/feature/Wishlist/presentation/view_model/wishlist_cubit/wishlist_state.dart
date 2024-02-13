@@ -5,4 +5,3 @@ sealed class WIshlistState {}
 final class SurahBookmarksInitial extends WIshlistState {}
 
 final class UpdateSurahSelected extends WIshlistState {}
-

@@ -8,6 +8,8 @@ class DetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  DetailsViewBody(category: category,);
+    return DetailsViewBody(
+      category: category,
+    );
   }
 }

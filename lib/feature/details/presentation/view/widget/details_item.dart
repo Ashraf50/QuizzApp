@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/model/category_model.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
+import 'package:quiz_app/feature/exam_page/presentation/view/exam_page_view.dart';
 
 class DetailsItem extends StatelessWidget {
   final CategoryModel category;
@@ -38,7 +41,9 @@ class DetailsItem extends StatelessWidget {
                     height: 30,
                   ),
                   CustomButton(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => ExamPageView(category: category));
+                    },
                     title: "Start Test",
                     width: 161,
                   )

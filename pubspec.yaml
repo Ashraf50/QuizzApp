@@ -45,6 +45,8 @@ dependencies:
   firebase_storage: ^11.6.5
   photo_view: ^0.14.0
   shimmer: ^3.0.0
+  dio: ^5.4.0
+  dartz: ^0.10.1
 dev_dependencies:
 
   # The "flutter_lints" package below contains a set of recommended lints to

@@ -18,7 +18,9 @@ class FinallyView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const CustomAppBar(title: "Congratulations!",),
+              const CustomAppBar(
+                title: "Congratulations!",
+              ),
               const LottieImage(image: "assets/img/finally.json"),
               const Text(
                 "You have reached the end of our introduction. We are excited to enroll you to our online Mock University. Thank you for choosing us and “Happy Mocking” !\nBest Wishes,\nMock University",
@@ -27,7 +29,7 @@ class FinallyView extends StatelessWidget {
               LowerPart(
                 title: "Get Started",
                 onTap: () {
-                  Get.to(()=> const SignUpView());
+                  Get.to(() => const SignUpView());
                 },
               ),
             ],
