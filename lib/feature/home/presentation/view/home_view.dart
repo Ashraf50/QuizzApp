@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/core/model/category_model.dart';
 import 'package:quiz_app/feature/home/presentation/view/widget/home_view_body.dart';
 
 class HomeView extends StatelessWidget {
@@ -6,6 +7,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HomeViewBody();
+    return HomeViewBody(category: allCategories);
   }
 }
