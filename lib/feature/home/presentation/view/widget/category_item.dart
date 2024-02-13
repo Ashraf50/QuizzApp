@@ -21,7 +21,7 @@ class CategoryItem extends StatelessWidget {
       padding: const EdgeInsets.only(right: 10, bottom: 20),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: onPressed,
+        onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -60,7 +60,7 @@ class CategoryItem extends StatelessWidget {
                         ),
                       ),
                       IconButton(
-                        onPressed: onTap,
+                        onPressed: onPressed,
                         icon: icon,
                       ),
                     ],

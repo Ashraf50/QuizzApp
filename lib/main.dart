@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:quiz_app/core/widget/bottom_bar.dart';
 import 'package:quiz_app/core/widget/snack_bar.dart';
+import 'package:quiz_app/feature/Wishlist/presentation/view_model/wishlist_cubit/wishlist_cubit.dart';
 import 'package:quiz_app/feature/registration/data/auth_bloc/auth_bloc.dart';
 import 'package:quiz_app/feature/splash/presentation/view/welcome_view.dart';
 import 'package:quiz_app/firebase_options.dart';
@@ -25,6 +26,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AuthBloc(),
+        ),
+        BlocProvider(
+          create: (context) => WIshlistCubit(),
         ),
       ],
       child: GetMaterialApp(

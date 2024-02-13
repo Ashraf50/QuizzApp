@@ -49,6 +49,10 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               const SizedBox(
                 height: 16,
               ),
+              const Text(
+                "Categories",
+                style: Style.textStyle16,
+              ),
               CategoryGridView(
                 category: filteredCategory,
               ),

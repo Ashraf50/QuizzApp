@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
-import 'package:quiz_app/feature/Wishlist/presentation/view/widget/wishlist_list_view.dart';
+import 'package:quiz_app/feature/Wishlist/presentation/view/widget/wishlist_grid_view.dart';
 
 class WishlistViewBody extends StatelessWidget {
   const WishlistViewBody({super.key});
@@ -24,7 +24,7 @@ class WishlistViewBody extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              WishlistListView(),
+              WishlistGridView(),
             ],
           ),
         ),
