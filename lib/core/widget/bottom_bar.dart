@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/feature/Wishlist/presentation/view/wishlist_view.dart';
-import 'package:quiz_app/feature/exams/presentation/view/exam_view.dart';
 import 'package:quiz_app/feature/home/presentation/view/home_view.dart';
 import 'package:quiz_app/feature/profile/presentation/view/profile_view.dart';
 
@@ -22,7 +21,6 @@ class _BottomBarState extends State<BottomBar> {
 
   List pages = [
     const HomeView(),
-    const ExamView(),
     const WishlistView(),
     const ProfileView(),
   ];
@@ -35,10 +33,6 @@ class _BottomBarState extends State<BottomBar> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: "Home",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.edit_document),
-            label: "Exams",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bookmark_border),

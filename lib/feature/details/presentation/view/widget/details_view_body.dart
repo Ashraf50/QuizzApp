@@ -6,7 +6,10 @@ import 'package:quiz_app/feature/details/presentation/view/widget/details_item.d
 
 class DetailsViewBody extends StatelessWidget {
   final CategoryModel category;
-  const DetailsViewBody({super.key, required this.category});
+  const DetailsViewBody({
+    super.key,
+    required this.category,
+  });
 
   @override
   Widget build(BuildContext context) {

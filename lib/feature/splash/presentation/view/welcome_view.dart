@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/feature/splash/presentation/view/about1_view.dart';
 import 'package:quiz_app/feature/splash/presentation/view/widget/custom_app_bar.dart';
@@ -26,6 +27,7 @@ class WelcomeView extends StatelessWidget {
               ),
               CustomButton(
                 title: "Continue",
+                 color: purple,
                 width: 301,
                 onTap: () {
                   Get.to(

@@ -3,22 +3,22 @@ import 'package:dio/dio.dart';
 import 'package:quiz_app/core/error/failure.dart';
 import 'package:quiz_app/core/repos/repo.dart';
 import 'package:quiz_app/core/utils/api_services.dart';
-import 'package:quiz_app/core/utils/exam_model/exam_model.dart';
+import 'package:quiz_app/core/model/exam_model.dart';
 
 class HomeRepoImpl implements HomeRepo {
   ApiServices apiServices;
   HomeRepoImpl(this.apiServices);
   @override
-  Future<Either<Failure, List<ExamModel>>> fetchExamQuestion() async {
+  Future<Either<Failure, List<ExamModel>>> fetchExamQuestion(
+      {required String category}) async {
     try {
       String baseUrl = "https://opentdb.com/api.php?";
       var data = await apiServices.get(
-        endPoint:
-            "${baseUrl}amount=10&category=9&difficulty=easy&type=multiple",
+        endPoint: "${baseUrl}amount=10&category=$category&type=multiple",
       );
       List<ExamModel> examQuestions = [];
       for (var exam in data["results"]) {
-        examQuestions.add(ExamModel.fromJson(exam));
+        examQuestions.add(ExamModel.fromMap(exam));
       }
       return right(examQuestions);
     } catch (e) {

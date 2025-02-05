@@ -4,8 +4,8 @@ import 'package:quiz_app/core/model/category_model.dart';
 
 class CategoryItem extends StatelessWidget {
   final Widget icon;
-  final Function() onPressed;
   final Function() onTap;
+  final Function() onPressed;
   final CategoryModel category;
   const CategoryItem({
     super.key,

@@ -38,7 +38,7 @@ class CustomPhoto extends StatelessWidget {
                         child: InkWell(
                           onTap: () {
                             Get.to(
-                              PhotoViewer(
+                              () => PhotoViewer(
                                 image: data["photoUrl"],
                               ),
                             );

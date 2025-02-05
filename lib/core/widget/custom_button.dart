@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/core/constant/colors.dart';
-
 class CustomButton extends StatelessWidget {
   final String title;
   final double width;
   final Function() onTap;
+  final Color? color;
   const CustomButton({
     super.key,
     required this.onTap,
     required this.title,
-    required this.width,
+    required this.width,required this.color,
   });
 
   @override
@@ -21,7 +20,7 @@ class CustomButton extends StatelessWidget {
         width: width,
         height: 48,
         decoration: BoxDecoration(
-          color: purple,
+          color: color,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(

@@ -1,11 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quiz_app/core/model/category_model.dart';
-
 part 'wishlist_state.dart';
 
-class WIshlistCubit extends Cubit<WIshlistState> {
-  WIshlistCubit() : super(SurahBookmarksInitial());
-  static WIshlistCubit get(context) => BlocProvider.of(context);
+class WishListCubit extends Cubit<WishlistState> {
+  WishListCubit() : super(SurahBookmarksInitial());
+  static WishListCubit get(context) => BlocProvider.of(context);
 
   List selectedWIshlist = [];
 

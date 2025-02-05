@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
 import 'package:quiz_app/core/widget/snack_bar.dart';
@@ -124,6 +125,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
                         ),
                       ),
                       CustomButton(
+                        color: purple,
                         onTap: () {
                           if (formKey.currentState!.validate()) {
                             BlocProvider.of<AuthBloc>(context).add(

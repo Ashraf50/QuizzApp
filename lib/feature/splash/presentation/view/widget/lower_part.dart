@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
 import 'package:quiz_app/feature/splash/presentation/view/widget/custom_icon_button.dart';
 
@@ -17,6 +18,7 @@ class LowerPart extends StatelessWidget {
           width: 27,
         ),
         CustomButton(
+          color: purple,
           width: 203,
           title: title,
           onTap: onTap,

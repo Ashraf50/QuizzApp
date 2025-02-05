@@ -47,6 +47,7 @@ dependencies:
   shimmer: ^3.0.0
   dio: ^5.4.0
   dartz: ^0.10.1
+  equatable: ^2.0.5
 dev_dependencies:
 
   # The "flutter_lints" package below contains a set of recommended lints to

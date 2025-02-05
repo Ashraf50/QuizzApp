@@ -5,8 +5,8 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
+import 'package:quiz_app/core/widget/bottom_bar.dart';
 import 'package:quiz_app/core/widget/snack_bar.dart';
-import 'package:quiz_app/feature/home/presentation/view/home_view.dart';
 import 'package:quiz_app/feature/registration/data/auth_bloc/auth_bloc.dart';
 
 class GoogleButton extends StatelessWidget {
@@ -20,7 +20,7 @@ class GoogleButton extends StatelessWidget {
         if (state is GooglSIgnLoading) {
           isLoading = true;
         } else if (state is GooglSIgnSuccess) {
-          Get.to(() => const HomeView());
+          Get.to(() => const BottomBar());
           isLoading = false;
         } else if (state is GooglSIgnFailure) {
           isLoading = false;

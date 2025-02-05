@@ -16,13 +16,12 @@ class CategoryGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WIshlistCubit, WIshlistState>(
+    var cubit = WishListCubit.get(context);
+    return BlocBuilder<WishListCubit, WishlistState>(
       builder: (context, state) {
-        var cubit = WIshlistCubit.get(context);
         return GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            childAspectRatio: 1,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: MediaQuery.of(context).size.width ~/ 200,
           ),
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -31,9 +30,11 @@ class CategoryGridView extends StatelessWidget {
             return CategoryItem(
               category: category[index],
               onTap: () {
-                Get.to(() => DetailsView(
-                      category: category[index],
-                    ));
+                Get.to(
+                  () => DetailsView(
+                    category: category[index],
+                  ),
+                );
               },
               icon: Icon(
                 cubit.isSelected(category[index])
@@ -41,7 +42,7 @@ class CategoryGridView extends StatelessWidget {
                     : Icons.bookmark_border,
                 color: purple,
               ),
-              onPressed: () {
+              onPressed: () async {
                 if (cubit.isSelected(category[index])) {
                   cubit.delete(category[index]);
                 } else {

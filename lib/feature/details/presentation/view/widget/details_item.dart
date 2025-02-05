@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:quiz_app/core/constant/colors.dart';
 import 'package:quiz_app/core/constant/text_style.dart';
 import 'package:quiz_app/core/model/category_model.dart';
 import 'package:quiz_app/core/widget/custom_button.dart';
@@ -44,6 +45,7 @@ class DetailsItem extends StatelessWidget {
                     onTap: () {
                       Get.to(() => ExamPageView(category: category));
                     },
+                    color: purple,
                     title: "Start Test",
                     width: 161,
                   )

@@ -1,7 +1,7 @@
 part of 'wishlist_cubit.dart';
 
-sealed class WIshlistState {}
+sealed class WishlistState {}
 
-final class SurahBookmarksInitial extends WIshlistState {}
+final class SurahBookmarksInitial extends WishlistState {}
 
-final class UpdateSurahSelected extends WIshlistState {}
+final class UpdateSurahSelected extends WishlistState {}

@@ -139,6 +139,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                         height: 10,
                       ),
                       CustomButton(
+                        color: purple,
                         onTap: () {
                           if (formKey.currentState!.validate()) {
                             BlocProvider.of<AuthBloc>(context).add(

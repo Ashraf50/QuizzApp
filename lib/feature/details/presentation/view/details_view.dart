@@ -4,7 +4,10 @@ import 'package:quiz_app/feature/details/presentation/view/widget/details_view_b
 
 class DetailsView extends StatelessWidget {
   final CategoryModel category;
-  const DetailsView({super.key, required this.category});
+  const DetailsView({
+    super.key,
+    required this.category,
+  });
 
   @override
   Widget build(BuildContext context) {
